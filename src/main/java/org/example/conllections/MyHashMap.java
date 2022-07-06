@@ -74,7 +74,18 @@ public class MyHashMap<K, V> implements Map<K, V> {
             if (node.getKey().equals(key)) {
                 node.setValue(value);
             } else {
-                node.next = new Node<>(key, value);
+                Node<K, V> preNode = null;
+                while (node != null){
+                    if(node.getKey().equals(key)){
+                        node.value = value;
+                        return value;
+                    }
+                    preNode = node;
+                    node = node.next;
+                }
+                preNode.next = new Node<>(key, value);
+                return value;
+
             }
         }
         return value;

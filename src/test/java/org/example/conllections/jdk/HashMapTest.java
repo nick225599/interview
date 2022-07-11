@@ -18,5 +18,23 @@ public class HashMapTest {
     }
 
 
+    @Test
+    public void test2() {
+        int hashCode = 5;
+        int size1 = 16;
+        int size2 = 16 << 1;
+        System.out.println("hashCode: " + hashCode + ", " + Integer.toBinaryString(hashCode));
+        System.out.println("size1: " + size1 + ", " + Integer.toBinaryString(size1));
+        int index1 = hashCode % size1;
+        System.out.println("index1: " + index1 + ", " + Integer.toBinaryString(index1));
+        System.out.println();
+        System.out.println("size2: " + size2 + ", " + Integer.toBinaryString(size2));
+        int index2 = hashCode % size2;
+        System.out.println("index2: " + index2 + ", " + Integer.toBinaryString(index2));
+        System.out.println();
+        int index3 = hashCode & size2;
+        System.out.println("index3: " + index3 + ", " + Integer.toBinaryString(index3));
+    }
+
 
 }

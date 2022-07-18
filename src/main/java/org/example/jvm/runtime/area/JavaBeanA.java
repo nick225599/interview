@@ -1,13 +1,15 @@
 package org.example.jvm.runtime.area;
 
-public class JavaBeanA {
+import org.example.App;
+
+public class JavaBeanA extends App {
     private String beanName;
     private JavaBeanB javaBeanB;
 
-    public JavaBeanA() {
-//        beanName = "a";
-//        javaBeanB = new JavaBeanB();
-    }
+//    public JavaBeanA() {
+////        beanName = "a";
+////        javaBeanB = new JavaBeanB();
+//    }
 
     public String getBeanName() {
         return this.beanName;

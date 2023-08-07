@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/spi-demo/spi-provider-dmz/pom.xml" />
         <option value="$PROJECT_DIR$/spi-demo/spi-provider-ptr/pom.xml" />
         <option value="$PROJECT_DIR$/spi-demo/spi-invoker/pom.xml" />
+        <option value="$PROJECT_DIR$/jdk-proxy-demo/pom.xml" />
       </list>
     </option>
   </component>

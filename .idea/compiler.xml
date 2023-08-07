@@ -11,10 +11,13 @@
         <module name="spi-invoker" />
         <module name="spi-facade" />
         <module name="spi-provider-dmz" />
+        <module name="big-decimal-demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="interview" target="1.8" />
+      <module name="jdk-proxy-demo (1)" target="1.8" />
+      <module name="jdk-proxy-demo (2)" target="1.8" />
       <module name="spi-invoker (1)" target="1.8" />
       <module name="spi-invoker (2)" target="1.8" />
       <module name="tmp-project" target="1.8" />

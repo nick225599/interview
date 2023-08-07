@@ -14,6 +14,7 @@
         <option value="$PROJECT_DIR$/spi-demo/spi-provider-ptr/pom.xml" />
         <option value="$PROJECT_DIR$/spi-demo/spi-invoker/pom.xml" />
         <option value="$PROJECT_DIR$/jdk-proxy-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/big-decimal-demo/pom.xml" />
       </list>
     </option>
   </component>

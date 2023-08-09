@@ -1,6 +1,7 @@
 package org.scs.unsafe.demo;
 
 import lombok.extern.slf4j.Slf4j;
+import org.scs.temp.common.ClassLoaderUtils;
 import sun.misc.Unsafe;
 
 import java.lang.reflect.Field;
@@ -12,23 +13,17 @@ import java.lang.reflect.Field;
 public class UnsafeDemo {
 
     private static void printClassLoaderName() {
-        Class<UnsafeDemo> caller = UnsafeDemo.class;
+        Class<ClassLoaderUtils> caller = ClassLoaderUtils.class;
         System.out.println("name of class: " + caller.getName());
 
-        ClassLoader classLoader = caller.getClassLoader();
-        System.out.println("name of classloader: " + classLoader.getName());
+        String className = ClassLoaderUtils.getNameOfClassLoader(caller);
+        System.out.println("name of classloader: " + className);
 
-        ClassLoader parentClassLoader = classLoader.getParent();
-        System.out.println("name of parent classloader: " + parentClassLoader.getName());
+        String parentClassName = ClassLoaderUtils.getNameOfParentClassLoader(caller);
+        System.out.println("name of parent classloader: " + parentClassName);
 
-        // This method will return null in such implementations
-        // if this class loader's parent is the bootstrap class loader.
-        ClassLoader parentParentClassLoader = parentClassLoader.getParent();
-        if (null == parentParentClassLoader) {
-            System.out.println("name of parent parent classloader: bootstrap");
-        } else {
-            System.out.println(parentParentClassLoader.getName());
-        }
+        String parentParentClassName = ClassLoaderUtils.getNameOfParentParentClassLoader(caller);
+        System.out.println("name of parent parent classloader: " + parentParentClassName);
     }
 
     private static Unsafe reflectGetUnsafe() {
@@ -48,5 +43,8 @@ public class UnsafeDemo {
         Unsafe unsafeInstance = UnsafeDemo.reflectGetUnsafe();
         System.out.println("null != unsafeInstance: " + (null != unsafeInstance));
 
+        // -Xbootclasspath/a:/Users/nick/IdeaProjects/temp-repository/unsafe-demo/target/unsafe-demo-1.0-SNAPSHOT-jar-with-dependencies.jar
+        Unsafe unsafe = Unsafe.getUnsafe();
+        System.out.println("null != unsafe: " + (null != unsafe));
     }
 }
